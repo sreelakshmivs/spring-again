@@ -1,14 +1,25 @@
 package spring.again.basics.springagain;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component
+//@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE) //Use PROTOTYPE to get two different beans when you call getbeans in the main program. By default the scope is SCOPE_SINGLETON
 public class BinarySearchImpl {
-    private SortAlgorithm sortAlgorithm;
 
-    public BinarySearchImpl(SortAlgorithm sortAlgorithm) { //Auto generated constructor, that takes SortAlgorithm as input
-        super();
-        this.sortAlgorithm = sortAlgorithm;
-    }
+    @Autowired
+    @Qualifier("bubble")
+    private SortAlgorithm sortAlgorithm; // SortAlgorithm is a dependency for BinarySearchImpl
 
-    public int binarySearch(int [] numbers, int numberToSearchFor){
+    /*public BinarySearchImpl(SortAlgorithm sortAlgorithm) { //Auto generated constructor, that takes SortAlgorithm as input
+        super();                                          //We can also use setter instead of constructor.
+        this.sortAlgorithm = sortAlgorithm;               //When the dependency is mandatory go for constructor, if the dependency is optional use setter.
+    } */                                                    //But, with@Autowired you dont even need neither constructor nor setter.
+
+    public int binarySearch(int [] numbers, int numberToSearchFor){ 
         //BubbleSortAlgorithm bubbleSortAlgorithm = new BubbleSortAlgorithm();
         //int[] sortedNumbers =  bubbleSortAlgorithm.sort(numbers);
 
