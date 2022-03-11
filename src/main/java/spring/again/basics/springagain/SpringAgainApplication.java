@@ -3,6 +3,7 @@ package spring.again.basics.springagain;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import spring.again.basics.springagain.basics.BinarySearchImpl;
 
 @SpringBootApplication
 public class SpringAgainApplication { //demonstrate loose coupling

@@ -1,4 +1,4 @@
-package spring.again.basics.springagain;
+package spring.again.basics.springagain.basics;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -14,7 +14,7 @@ public class BinarySearchImpl {
     @Qualifier("bubble")
     private SortAlgorithm sortAlgorithm; // SortAlgorithm is a dependency for BinarySearchImpl
 
-    /*public BinarySearchImpl(SortAlgorithm sortAlgorithm) { //Auto generated constructor, that takes SortAlgorithm as input
+    /*public BinarySearchImpl(SortAlgorithm sortAlgorithm) { //Auto generate constructor, that takes SortAlgorithm as input
         super();                                          //We can also use setter instead of constructor.
         this.sortAlgorithm = sortAlgorithm;               //When the dependency is mandatory go for constructor, if the dependency is optional use setter.
     } */                                                    //But, with@Autowired you dont even need neither constructor nor setter.
