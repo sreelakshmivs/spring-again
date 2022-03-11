@@ -1,4 +1,4 @@
-package spring.again.basics.springagain.basics;
+package spring.again.basics.springagain.springin5steps.basics;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
