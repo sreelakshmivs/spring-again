@@ -1,12 +1,18 @@
 package spring.again.basics.springagain.springin5steps.basics;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 @Component
 //@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE) //Use PROTOTYPE to get two different beans when you call getbeans in the main program. By default the scope is SCOPE_SINGLETON
 public class BinarySearchImpl {
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     @Qualifier("bubble")
@@ -27,5 +33,15 @@ public class BinarySearchImpl {
         int [] sortedNumbers = sortAlgorithm.sort(numbers);
         System.out.println(sortAlgorithm);
         return 3;
+    }
+
+    @PostConstruct   //This annotation along with the function is used to do certain things after the creation of the bean
+    public void postConstruct(){
+        logger.info("postConstruct");
+    }
+
+    @PreDestroy //To do things just before the bean is removed.
+    public void preDestroy(){
+        logger.info("preDestroy");
     }
 }
