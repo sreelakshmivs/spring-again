@@ -7,10 +7,10 @@ import spring.again.basics.springagain.springin5steps.SpringAgainBasicApplicatio
 import static org.assertj.core.api.Fail.fail;
 
 @SpringBootTest(classes = SpringAgainBasicApplication.class)
-class SpringAgainBasicApplicationTests {
+class BinarySearchImplTest {
 
 	@Test
-	public void test() {
+	public void testBasicScenario() {
 		fail("Not yet implemented");
 	}
 
