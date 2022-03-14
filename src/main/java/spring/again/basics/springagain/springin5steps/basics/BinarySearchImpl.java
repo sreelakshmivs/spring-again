@@ -40,8 +40,8 @@ public class BinarySearchImpl {
         logger.info("postConstruct");
     }
 
-    @PreDestroy //To do things just before the bean is removed.
+    @PreDestroy
     public void preDestroy(){
-        logger.info("preDestroy");
+        logger.info("postConstruct");
     }
 }
